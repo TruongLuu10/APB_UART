@@ -16,6 +16,8 @@ quartus/simulation/
 
 # ModelSim / QuestaSim generated files
 quartus/work/
+work/
+sim_interface
 *.wlf
 *.vcd
 *.cr.mti
