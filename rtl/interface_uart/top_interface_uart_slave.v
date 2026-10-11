@@ -1,4 +1,4 @@
-module uart_apb_slave_top (
+module top_interface_uart_slave (
   // Tu APB Bus
   input  wire        pclk,
   input  wire        presetn,
