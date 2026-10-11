@@ -116,15 +116,10 @@ module apb_datapath (
   always @(posedge pclk or negedge presetn) begin
     if (!presetn) begin
       stt_reg <= 0;
+      stt_reg[0] <= 1'b1; // tx_done sau khi reset la 1 (reset TX ranh, san sang truyen)
     end else begin
       // 1. Mac dinh clear khi CPU thuc hien doc thanh ghi stt_reg (0x010)
-      if (reg_rd_en && (paddr == 12'h010)) begin
-        stt_reg[2:0] <= 3'b000;
-      end
-
-      if (tx_done)      stt_reg[0] <= 1'b1;
-      if (rx_done)      stt_reg[1] <= 1'b1;
-      if (parity_error) stt_reg[2] <= 1'b1;
+      stt_reg <= {29'b0, parity_error, rx_done, tx_done};
     end
   end
   

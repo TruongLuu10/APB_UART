@@ -27,7 +27,7 @@ module uart_apb_slave_top (
   output wire [1:0] data_bit_num,
   output wire       stop_bit_num,
   output wire       parity_en,
-  output wire       parity_type       // 0 = 1-bit, 1 = 2-bit
+  output wire       parity_type       // 0 = Odd, 1 = Even
 );
 
   // Day noi bo tu FSM -> Datapath
