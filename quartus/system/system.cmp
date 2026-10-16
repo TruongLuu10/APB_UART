@@ -1,0 +1,16 @@
+	component system is
+		port (
+			apb_bus_psel    : out std_logic;                                        -- psel
+			apb_bus_penable : out std_logic;                                        -- penable
+			apb_bus_pwrite  : out std_logic;                                        -- pwrite
+			apb_bus_paddr   : out std_logic_vector(11 downto 0);                    -- paddr
+			apb_bus_pwdata  : out std_logic_vector(31 downto 0);                    -- pwdata
+			apb_bus_pstrb   : out std_logic_vector(3 downto 0);                     -- pstrb
+			apb_bus_pready  : in  std_logic                     := 'X';             -- pready
+			apb_bus_pslverr : in  std_logic                     := 'X';             -- pslverr
+			apb_bus_prdata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- prdata
+			clk_clk         : in  std_logic                     := 'X';             -- clk
+			reset_reset_n   : in  std_logic                     := 'X'              -- reset_n
+		);
+	end component system;
+
